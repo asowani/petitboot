@@ -1,5 +1,8 @@
-# testing
+# testing ppc64le.
 language: c
+os:
+  - linux-ppc64le
+  - linux
 
 sudo: required
 dist: trusty
