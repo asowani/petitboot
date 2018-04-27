@@ -14,7 +14,7 @@ os:
   - linux-ppc64le
   - linux
 
-sudo: required
+sudo: false
 dist: trusty
 
 before_install:
