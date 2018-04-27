@@ -1,13 +1,18 @@
 language: c
-os:
-  - linux-ppc64le
-  - linux
 
-sudo: false
-dist: trusty
+matrix:
+  include:
+    - os: linux-ppc64le
+      dist: xenial
+      sudo: false
+    - os: linux
+      dist: trusty
+      sudo: required
+
+#sudo: required
+#dist: trusty
 
 before_install:
- - whoami
  - sudo apt-get -qq update
  - sudo apt-get install -y autopoint libuv-dev libdevmapper-dev flex bison
  - ./bootstrap
