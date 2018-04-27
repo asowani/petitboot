@@ -1,20 +1,30 @@
 # testing ppc64le.
 language: c
+
+#matrix:
+#  include:
+#    - os: linux-ppc64le
+#      dist: xenial
+#      sudo: false
+#    - os: linux
+#      dist: trusty
+#      sudo: required
+
 os:
   - linux-ppc64le
   - linux
 
-sudo: false
-dist: xenial
+sudo: required
+dist: trusty
 
 before_install:
- - apt-get -qq update
- - apt-get install -y autopoint libuv-dev libdevmapper-dev flex bison
- - ./bootstrap
+ - sudo apt-get -qq update
+ - sudo apt-get install -y autopoint libuv-dev libdevmapper-dev flex bison
+ - sudo ./bootstrap
 
 install:
- - ./configure --with-twin-x11=no --with-twin-fbdev=no
- - make
+ - sudo ./configure --with-twin-x11=no --with-twin-fbdev=no
+ - sudo make
 
 script:
- - make check
+ - sudo make check
