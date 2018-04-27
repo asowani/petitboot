@@ -1,4 +1,3 @@
-# test
 language: c
 os:
   - linux-ppc64le
