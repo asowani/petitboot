@@ -1,3 +1,4 @@
+# test with matrix.
 language: c
 
 matrix:
